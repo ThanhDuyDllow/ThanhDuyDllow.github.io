@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dog Chat</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #857d7d9f;
+            cursor: url('image/image1/controchuot1.png'), auto;
+            font-family: 'Roboto', sans-serif;
+        }
+        .dog-container {
+            position: relative;
+            cursor: url('image/image1/controchuot1.png'), auto;
+        }
+        .dog-container img {
+            width: 300px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+            cursor: url('image/image1/controchuot1.png'), auto;
+        }
+        .dog-container img:hover {
+            transform: scale(1.1);
+            cursor: url('image/image1/controchuot1.png'), auto;
+        }
+        .chat-box {
+            display: none;
+            position: absolute;
+            top: -150px; /* Adjust this value according to the size of your bubble image */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 450px; /* Adjust according to your bubble image size */
+            height: 100px; /* Adjust according to your bubble image size */
+            background: url("image/image1/Trông_cậu_có_vẻ_áp_lực_.__1_-removebg-preview.png") no-repeat center center;
+            background-size: contain;
+            text-align: center;
+            padding-top: 20px; /* Adjust this value to position text correctly */
+            font-size: 18px;
+            color: black;
+            cursor: url('image/image1/controchuot1.png'), auto;
+        }
+        .chat-box button {
+            margin-top: 20px;
+            width: 20px; /* Adjust the size as needed */
+            height: 20px; /* Adjust the size as needed */
+            background-color: transparent;
+            background-image: url("image/image1/nutchuyentrai.png"); /* Path to your image */
+            background-size: cover;
+            border: none;
+            cursor: pointer;
+            cursor: url('image/image1/controchuot1.png'), auto;
+        }
+        .info-message {
+            position: fixed;
+            top: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #f0f0f0;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            display: none;
+            cursor: url('image/image1/controchuot1.png'), auto;
+        }
+    </style>
+</head>
+<body>
+    <div class="dog-container">
+        <img src="image/image1/chuoncho.png" alt="Dog" id="dog-image">
+        <div class="chat-box" id="chat-box">
+            <div id="chat-content">Xin chào! Tôi là một con chó.</div>
+            <button id="prev-button"></button>
+        </div>
+    </div>
+
+    <script>
+        const dialogues = [
+            "Hình như có ai đó đang gọi mình !",
+            "Ơ ơ là một cô gái dễ thương ",
+            "Nè cậu đã ăn gì chưa đấy, \ncậu chủ nhỏ  vừa cho \ntớ khúc xương này ? ",
+            "mlem...xương ngon Tuyệt!",
+            "Mà trông cậu có vẻ buồn vậy!",
+            "Mạnh mẽ lên! \ntrái đất quay tròn mà có ngày\nbuồn sẽ có ngày vui thôi!",
+            "Cậu chủ nhỏ của tớ \n  nhờ tớ gửi đến cậu một\nbài hát...Lắng nghe nhé!!",
+            "zìa...yeal...em vào đời bằng\nđại lộ anh vào đời \nbằng lối nhỏ",
+            "Cậu cười lên thật xinh!\n hi vọng luôn được thấy cậu cười",
+            "Tớ phải về với cậu chủ nhỏ rồi!\n Tạm biệt cậu nhá!!!!"
+
+        ];
+
+        const images = [
+            "image/image1/chuoncho.png",
+            "image/image1/cho1.png",
+            "image/image1/cho2.png",
+            "image/image1/cho9.png",
+            "image/image1/cho4.png",
+            "image/image1/cho3.png",
+            "image/image1/cho5.png",
+            "image/image1/cho10.png",
+            "image/image1/cho6.png",
+            "image/image1/chocut.png"
+        ];
+
+        const hoverImages = {
+            "image/image1/cho3.png": "image/image1/cho8.png"
+        };
+
+        const sounds = [
+            "sound/tienchosua.mp3",
+            "sound/tiengchosua1.mp3",
+            "sound3.mp3",
+            "sound/tienchosua.mp3",
+            "sound5.mp3",
+            "sound/tiengchosua1.mp3",
+            "sound5.mp3",
+            "sound/thanhduynhac.mp3",
+            "sound/tienchosua.mp3",
+            "sound5.mp3",
+            "sound5.mp3",
+
+        ];
+
+        let currentIndex = 0;
+        let intervalId = null;
+
+        const chatBox = document.getElementById('chat-box');
+        const chatContent = document.getElementById('chat-content');
+        const dogImage = document.getElementById('dog-image');
+        const prevButton = document.getElementById('prev-button');
+        const infoMessage = document.getElementById('info-message');
+
+        dogImage.addEventListener('click', function() {
+            currentIndex = (currentIndex + 1) % dialogues.length;
+            updateContent();
+            // Check if current image is "cho2.png" and show info message
+            if (images[currentIndex] === "image/image1/cho2.png") {
+                showInfoMessage();
+            }
+        });
+
+        prevButton.addEventListener('click', function() {
+            currentIndex = (currentIndex - 1 + dialogues.length) % dialogues.length;
+            updateContent();
+        });
+
+        dogImage.addEventListener('mouseover', function() {
+            if (dogImage.src.includes("cho2.png")) {
+                showInfoMessage();
+                dogImage.src = hoverImages["image/image1/cho3.png"];
+            }
+        });
+
+        dogImage.addEventListener('mouseout', function() {
+            hideInfoMessage();
+            if (dogImage.src.includes("cho10Copy.png")) {
+                dogImage.src = "image/image1/cho2.png";
+            }
+        });
+
+        function updateContent() {
+            chatContent.innerText = dialogues[currentIndex];
+            dogImage.src = images[currentIndex];
+            playSound(sounds[currentIndex]);
+            chatBox.style.display = 'block';
+
+            // Clear previous interval if any
+            if (intervalId) {
+                clearInterval(intervalId);
+                intervalId = null;
+            }
+
+            // Start interval for specific images
+            if (images[currentIndex] === "image/image1/cho10.png" || 
+                images[currentIndex] === "image/image1/nhay1.png" ||
+                images[currentIndex] === "image/image1/nhay2.png" ||
+                images[currentIndex] === "image/image1/nhay3.png") {
+                
+                const alternateImages = [
+                    "image/image1/cho10.png",
+                    "image/image1/nhay1.png",
+                    "image/image1/nhay2.png",
+                    "image/image1/nhay3.png"
+                ];
+                
+                let index = 0;
+                intervalId = setInterval(() => {
+                    dogImage.src = alternateImages[index];
+                    index = (index + 1) % alternateImages.length;
+                }, 500); // Change image every 500 milliseconds
+            }
+        }
+
+        function playSound(src) {
+            const audio = new Audio(src);
+            audio.play();
+        }
+
+        function showInfoMessage() {
+            infoMessage.style.display = 'block';
+        }
+
+        function hideInfoMessage() {
+            infoMessage.style.display = 'none';
+        }
+    </script>
+</body>
+</html>
