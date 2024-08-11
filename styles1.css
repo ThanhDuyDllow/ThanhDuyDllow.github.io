@@ -1,0 +1,107 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+header {
+    background-color: #f4f4f4;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    background-color: rgba(255, 68, 0, 0.920);
+}
+
+#address-icon {
+    text-align: left; /* Căn chỉnh văn bản sang trái */
+    padding-left: 1%; /* Cách lề trái 10px */
+    display: inline-block;
+}
+
+#logo {
+    flex-grow: 1;
+    text-align: center;
+}
+
+#logo img {
+    max-width: 100%;
+    width: 10%;
+}
+
+#address-icon img {
+    max-width: 100%;
+    width: 25px;
+}
+
+/* Responsive design */
+@media (max-width: 10%) {
+    #address-icon img {
+        width: 15px; /* Giảm kích thước icon cho màn hình nhỏ hơn */
+        height: 10px; 
+    }
+
+    #logo img {
+        width: 5%; /* Giảm kích thước icon cho màn hình nhỏ hơn */
+        height: 1%;
+    }
+}
+
+/* styles của slideshow  */
+
+.slideshow-container {
+    position: relative;
+    max-width: 100%;
+    margin: auto;
+    overflow: hidden; /* Đảm bảo các slide không tràn ra ngoài */
+}
+
+.slide {
+    display: none;
+    min-width: 100%; /* Đảm bảo mỗi slide chiếm toàn bộ chiều rộng */
+    height: 60%;
+    transition: opacity 1s ease-in-out, transform 1s ease-in-out; /* Smooth transition */
+    opacity: 0; /* Start with hidden slides */
+    transform: scale(0.1); /* Slightly scale down the slide */
+}
+
+.slide img {
+    width: 100%;
+    height: 60%;
+}
+
+.slide.active {
+    display: block;
+    opacity: 1; /* Show active slide */
+    transform: scale(1); /* Scale up to normal size */
+}
+
+.dots-container {
+    display: flex;
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically, if needed */
+    background-color: rgba(7, 7, 7, 0.384);
+    border-radius: 30px; /* Adjust as needed */
+    padding: 5px 0; /* Vertical padding */
+    position: absolute; /* Position absolutely within the slideshow container */
+    bottom: 10%; 
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset by half of its own width to truly center */
+}
+
+.dot {
+    height: 5px; /* Adjust the size of the dots */
+    width: 14px; /* Adjust the size of the dots */
+    margin: 0 3px; /* Adjust spacing between dots */
+    background-color: #c9c2c2;
+    border-radius: 30%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active-dot {
+    background-color: #ffffff;
+}
+
