@@ -10,7 +10,7 @@
 <body>
     <header>
         <nav>
-            <a href="https://www.example.com" id="address-icon">
+            <a href="https://thanhduydllow.github.io/" id="address-icon">
                 <img src="image/diachi.png" alt="Địa chỉ">
             </a>
             <div id="logo">
@@ -41,9 +41,9 @@
     <div class="slideshow-wrapper"> <!-- khung ngoài của  slideshow thứ 2 -->
         <div class="swiper-container"> 
             <div class="swiper-wrapper">
-                <div class="swiper-slide"><img src="image/1.jpg" alt="Image 1"></div>
-                <div class="swiper-slide"><img src="image/2.jpg" alt="Image 2"></div>
-                <div class="swiper-slide"><img src="image/3.jpg" alt="Image 3"></div>
+                <div class="swiper-slide"><img src="image/anh1.png" alt="Image 1"></div>
+                <div class="swiper-slide"><img src="image/anh2.png" alt="Image 2"></div>
+                <div class="swiper-slide"><img src="image/anh3.png" alt="Image 3"></div>
                 <!-- Add more slides as needed -->
             </div>
             <!-- dấu 3 chấm dưới slideshow thứ 2 -->
@@ -62,7 +62,7 @@
                 <img src="image/gapop+top.jpg" alt="Sản phẩm 1">
                 <h3>Gà Pop + Top</h3>
                 <p class="price" id="price1">Giá: 19,000 VND</p>
-                <p class="rating" id="rating1">Đánh giá: 
+                <p class="rating" id="rating1">Đánh giá:
                     <span class="star" data-value="1">☆</span>
                     <span class="star" data-value="2">☆</span>
                     <span class="star" data-value="3">☆</span>
@@ -101,66 +101,153 @@
                 <img src="image/khoai tay chien.jpg" alt="Sản phẩm 3">
                 <h3>Khoai Tây Chiên</h3>
                 <p class="price" id="price3">Giá: 19,000 VND</p>
-                <p class="rating">Đánh giá: ★★★☆☆</p>
+                <p class="rating" id="rating3">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction3"></span>
+                </p>
                 <div class="size-buttons">
                     <button onclick="changePrice('price3', 19000)">Size M</button>
                     <button onclick="changePrice('price3', 35000)">Size L</button>
                 </div>
             </li>
+        
             <li class="menu-item">
                 <img src="image/combosieuhoi.jpg" alt="Sản phẩm 4">
                 <h3>Combo Siêu Hời</h3>
                 <p class="price" id="price4">Giá: 35,000 VND</p>
-                <p class="rating">Đánh giá: ★★★☆☆</p>
+                <p class="rating" id="rating4">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction4"></span>
+                </p>
                 <div class="size-buttons">
                     <button onclick="changePrice('price4', 35000)">Pesi</button>
                     <button onclick="changePrice('price4', 53000)">Trà Sữa</button>
                 </div>
             </li>
+        
             <li class="menu-item">
                 <img src="image/combo sieu hoi.jpg" alt="Sản phẩm 5">
                 <h3>Combo 4 Món</h3>
                 <p class="price" id="price5">Giá: 167,000 VND</p>
-                <p class="rating">Đánh giá: ★★★☆☆</p>
+                <p class="rating" id="rating5">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction5"></span>
+                </p>
                 <div class="size-buttons">
                     <button onclick="changePrice('price5', 167000)">4 Gà Tok Size L</button>
                 </div>
             </li>
+        
             <li class="menu-item">
                 <img src="image/combodavutru.jpg" alt="Sản phẩm 6">
                 <h3>Combo Đa Vũ Trụ</h3>
                 <p class="price" id="price6">Giá: 34,000 VND</p>
-                <p class="rating">Đánh giá: ★★★☆☆</p>
+                <p class="rating" id="rating6">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction6"></span>
+                </p>
                 <div class="size-buttons">
                     <button onclick="changePrice('price6', 34000)">TOK + Khoai Tây Lắc Size M</button>
-
                 </div>
             </li>
-
+        
             <li class="menu-item">
                 <img src="image/gapop+top.jpg" alt="Sản phẩm 7">
                 <h3>Gà Pop + Top</h3>
                 <p class="price" id="price7">Giá: 19,000 VND</p>
-                <p class="rating">Đánh giá: ★★★★☆</p>
+                <p class="rating" id="rating7">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction7"></span>
+                </p>
                 <div class="size-buttons">
                     <button onclick="changePrice('price7', 19000)">Size M</button>
                     <button onclick="changePrice('price7', 39000)">Size L</button>
                 </div>
             </li>
+
             <li class="menu-item">
                 <img src="image/gaphusot.jpg" alt="Sản phẩm 8">
                 <h3>Gà Phủ Sốt</h3>
                 <p class="price" id="price8">Giá: 29,000 VND</p>
-                <p class="rating">Đánh giá: ★★★☆☆</p>
+                <p class="rating" id="rating7">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction8"></span>
+                </p>
                 <div class="size-buttons">
-                    <button onclick="changePrice('price8', 29000)">Size M</button>
-                    <button onclick="changePrice('price8', 45000)">Size L</button>
+                    <button onclick="changePrice('price8', 19000)">Size M</button>
+                    <button onclick="changePrice('price8', 39000)">Size L</button>
                 </div>
             </li>
+            
 
             <!-- Thêm các sản phẩm khác tương tự -->
         </ul>   
     </div>
+
+
+    <div class="fixed-icons">
+        <a href="https://www.facebook.com" target="_blank">
+            <img src="image/iconfacebook.png" alt="Facebook">
+        </a>
+        <a href="https://www.google.com/maps" target="_blank">
+            <img src="image/icons8-map-48.png" alt="Address">
+        </a>
+        <a href="https://www.tiktok.com" target="_blank">
+            <img src="image/icons8-tiktok-50.png" alt="TikTok">
+        </a>
+    </div>
+    
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section address">
+                <h3>Địa chỉ</h3>
+                <p>167 Hà Huy Tập, Q.Thanh Khê, TP.Đà Nẵng</p>
+                <p>242 Phạm Cự Lượng, Q.Sơn Trà, TP.Đà Nẵng</p>
+                <p>82e Nguyễn Chí Thanh, Q.Hải Châu, TP.Đà Nẵng</p>
+                <p>34 Phan Đăng Lưu, Q.Hải Châu TP.Đà Nẵng</p>
+                <p>116 Huỳnh Thúc Kháng, Q.Hải Châu, TP.Đà Nẵng</p>
+            </div>
+            
+            <div class="footer-section phone">
+                <h3>Số điện thoại</h3>
+                <p>(+84) 034 409 7150</p>
+            </div>
+    
+            <div class="footer-section phone">
+                <h3>Giờ Mở Cửa</h3>
+                <p>9H - 22H</p>
+            </div>
+            <div class="footer-section contact">
+                <h3>Liên hệ hỗ trợ</h3>
+                <p>Email: thanhduygaga@gmail.com</p>
+            </div>
+        </div>
+    </footer>
+    
 
     <!-- Nội dung khác của trang web -->
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
