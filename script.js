@@ -77,3 +77,24 @@ function handleSwipe() {
         prevSlide();
     }
 }
+
+const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    autoplay: {
+        delay: 4000,
+        disableOnInteraction: false,
+    },
+    navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
+    },
+    pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+    },
+    grabCursor: true,
+});
+
+function changePrice(elementId, price) {
+    document.getElementById(elementId).innerText = 'Giá: ' + price.toLocaleString('vi-VN') + ' VND';
+}
