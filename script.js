@@ -98,3 +98,106 @@ const swiper = new Swiper('.swiper-container', {
 function changePrice(elementId, price) {
     document.getElementById(elementId).innerText = 'Giá: ' + price.toLocaleString('vi-VN') + ' VND';
 }
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Danh sách các sản phẩm với ID của phần đánh giá và phản ứng
+    const products = [
+        { id: 'rating1', reactionId: 'reaction1' },
+        { id: 'rating2', reactionId: 'reaction2' },
+        { id: 'rating3', reactionId: 'reaction3' },
+        { id: 'rating4', reactionId: 'reaction4' },
+        { id: 'rating5', reactionId: 'reaction5' },
+        { id: 'rating6', reactionId: 'reaction6' },
+        { id: 'rating7', reactionId: 'reaction7' }
+    ];
+
+    // Lặp qua từng sản phẩm để gán sự kiện cho các ngôi sao
+    products.forEach(product => {
+        const stars = document.querySelectorAll(`#${product.id} .star`);
+        let selectedRating = 3; // Số sao bạn quy định sẵn
+        let hasRated = false; // Biến để theo dõi trạng thái đánh giá
+
+        stars.forEach(star => {
+            // Sự kiện khi rê chuột qua ngôi sao
+            star.addEventListener('mouseover', function() {
+                if (!hasRated) {
+                    const value = parseInt(this.getAttribute('data-value'));
+                    highlightStars(value, stars);
+                    showReaction(value, product.reactionId);
+                }
+            });
+
+            // Sự kiện khi chuột rời khỏi ngôi sao
+            star.addEventListener('mouseout', function() {
+                if (!hasRated) {
+                    highlightStars(selectedRating, stars);
+                    hideReaction(product.reactionId);
+                }
+            });
+
+            // Sự kiện khi nhấp vào ngôi sao
+            star.addEventListener('click', function() {
+                if (!hasRated) {
+                    selectedRating = parseInt(this.getAttribute('data-value'));
+                    highlightStars(selectedRating, stars);
+                    hasRated = true; // Đánh dấu là đã đánh giá
+                }
+            });
+        });
+
+        // Hàm để làm nổi bật các ngôi sao
+        function highlightStars(rating, stars) {
+            stars.forEach((star, index) => {
+                if (index < rating) {
+                    star.classList.add('hover');
+                    star.innerText = '★';
+                } else {
+                    star.classList.remove('hover');
+                    star.innerText = '☆';
+                }
+            });
+        }
+
+        // Hàm để hiển thị biểu tượng cảm xúc
+        function showReaction(rating, reactionId) {
+            const reactionElement = document.getElementById(reactionId);
+            let reaction = '';
+
+            switch (rating) {
+                case 1:
+                    reaction = '😢';
+                    break;
+                case 2:
+                    reaction = '🥺';
+                    break;
+                case 3:
+                    reaction = '😊';
+                    break;
+                case 4:
+                    reaction = '😂';
+                    break;
+                case 5:
+                    reaction = '❤️';
+                    break;
+            }
+
+            reactionElement.innerText = reaction;
+            reactionElement.style.display = 'inline';
+        }
+
+        // Hàm để ẩn biểu tượng cảm xúc
+        function hideReaction(reactionId) {
+            const reactionElement = document.getElementById(reactionId);
+            reactionElement.style.display = 'none';
+        }
+
+        // Khởi tạo trạng thái ban đầu
+        highlightStars(selectedRating, stars);
+    });
+});
+
+// Hàm để thay đổi giá
+function changePrice(priceId, newPrice) {
+    document.getElementById(priceId).innerText = `Giá: ${newPrice.toLocaleString()} VND`;
+}
