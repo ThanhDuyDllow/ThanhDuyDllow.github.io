@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Press Start 2P', cursive;
 }
 
 header {
@@ -33,7 +33,7 @@ nav {
 
 #address-icon img {
     max-width: 100%;
-    width: 25px;
+    width: 55px;
 }
 
 /* Responsive design */
@@ -56,6 +56,7 @@ nav {
     max-width: 100%;
     margin: auto;
     overflow: hidden; /* Đảm bảo các slide không tràn ra ngoài */
+    
 }
 
 .slide {
@@ -105,3 +106,110 @@ nav {
     background-color: #ffffff;
 }
 
+/* sile ảnh dưới  */
+.slideshow-wrapper {
+    width: 80%; /* Set the width of the slideshow */
+    height: auto; /* Set the height of the slideshow */
+    overflow: hidden; /* Hide overflow */
+    border: 2px solid #0e0e0e; /* Optional: Add a border */
+    border-radius: 10px; /* Optional: Add rounded corners */
+      
+    align-items: center; /* Center vertically, if needed */
+    position: absolute; /* Position absolutely within the slideshow container */
+    left: 50%; /* Center horizontally */
+    transform: translateX(-50%); /* Offset by half of its own width to truly center */
+
+}
+
+.swiper-container {
+    width: auto;
+    height: auto;
+    
+}
+
+.swiper-slide {
+    text-align: center;
+    font-size: 18px;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+}
+
+/* diề chỉnh nút và ba chấm */
+.swiper-pagination {
+    bottom: 10px; /* Adjust position */
+    text-align: center;
+}
+
+/* styles của menu */
+.menu {
+    display: flex;
+    flex-wrap: wrap;
+    list-style-type: none;
+    padding: 0;
+}
+.menu-item {
+    flex: 1 1 100%;
+    border: 1px solid #ccc;
+    margin: 5px;
+    padding: 10px;
+    text-align: center;
+}
+.menu-item img {
+    max-width: 100%;
+    height: auto;
+}
+.menu-item h3 {
+    margin: 10px 0 5px;
+}
+.menu-item .price {
+    color: green;
+}
+.menu-item .rating {
+    color: gold;
+}
+.menu-item .size-buttons {
+    margin-top: 10px;
+}
+.menu-item .size-buttons button {
+    margin: 5px;
+    padding: 5px 10px;
+}
+@media (min-width: 300px) {
+    .menu-item {
+        flex: 1 1 32%;
+    }
+}
+@media (min-width: 500px) {
+    .menu-item {
+        flex: 1 1 22%;
+    }
+}
+.khungmenu {
+    margin-top: 26%; /* Thêm khoảng cách phía trên */
+}
+
+.menu-banner img {  
+    width: 100%; /* Đặt chiều rộng cụ thể */
+
+}
+/* Đặt phông chữ  cho nút */
+.size-buttons button {
+    font-family: 'Press Start 2P', cursive;
+    color: white; /* Màu chữ */
+    background-color: #ff5100; /* Màu nền */
+    border: none;
+    padding: 10px 20px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.size-buttons button:hover {
+    background-color: #000000; /* Màu nền khi hover */
+}
