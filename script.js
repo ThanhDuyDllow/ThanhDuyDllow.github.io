@@ -109,13 +109,14 @@ document.addEventListener('DOMContentLoaded', function() {
         { id: 'rating4', reactionId: 'reaction4' },
         { id: 'rating5', reactionId: 'reaction5' },
         { id: 'rating6', reactionId: 'reaction6' },
-        { id: 'rating7', reactionId: 'reaction7' }
+        { id: 'rating7', reactionId: 'reaction7' },
+        { id: 'rating8', reactionId: 'reaction8' }
     ];
 
     // Lặp qua từng sản phẩm để gán sự kiện cho các ngôi sao
     products.forEach(product => {
         const stars = document.querySelectorAll(`#${product.id} .star`);
-        let selectedRating = 3; // Số sao bạn quy định sẵn
+        let selectedRating = 0; // Số sao bạn quy định sẵn
         let hasRated = false; // Biến để theo dõi trạng thái đánh giá
 
         stars.forEach(star => {
