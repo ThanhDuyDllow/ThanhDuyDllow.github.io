@@ -243,3 +243,50 @@ nav {
     position: relative;
     display: inline-block;
 }
+
+/* thanh bên góc dưới phải  */
+
+.fixed-icons {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fixed-icons a img {
+    width: 40px;
+    height: 40px;
+}
+
+
+
+/* chân trang */
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer-section {
+    margin: 10px 0;
+}
+
+.footer-section h3 {
+    margin-bottom: 10px;
+}
+
+.footer-section p {
+    margin: 0;
+    line-height: 2; /* Tăng khoảng cách giữa các dòng */
+}
+
+
