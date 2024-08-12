@@ -56,26 +56,46 @@
             <img src="image/Menu.png" alt="Menu">
         </div>
         <ul class="menu">
+
+
             <li class="menu-item">
                 <img src="image/gapop+top.jpg" alt="Sản phẩm 1">
                 <h3>Gà Pop + Top</h3>
                 <p class="price" id="price1">Giá: 19,000 VND</p>
-                <p class="rating">Đánh giá: ★★★★☆</p>
+                <p class="rating" id="rating1">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction1"></span>
+                </p>
                 <div class="size-buttons">
                     <button onclick="changePrice('price1', 19000)">Size M</button>
                     <button onclick="changePrice('price1', 39000)">Size L</button>
                 </div>
             </li>
+        
+
+
             <li class="menu-item">
                 <img src="image/gaphusot.jpg" alt="Sản phẩm 2">
                 <h3>Gà Phủ Sốt</h3>
                 <p class="price" id="price2">Giá: 29,000 VND</p>
-                <p class="rating">Đánh giá: ★★★☆☆</p>
+                <p class="rating" id="rating2">Đánh giá: 
+                    <span class="star" data-value="1">☆</span>
+                    <span class="star" data-value="2">☆</span>
+                    <span class="star" data-value="3">☆</span>
+                    <span class="star" data-value="4">☆</span>
+                    <span class="star" data-value="5">☆</span>
+                    <span class="reaction" id="reaction2"></span>
+                </p>
                 <div class="size-buttons">
                     <button onclick="changePrice('price2', 29000)">Size M</button>
                     <button onclick="changePrice('price2', 45000)">Size L</button>
                 </div>
             </li>
+            
 
             <li class="menu-item">
                 <img src="image/khoai tay chien.jpg" alt="Sản phẩm 3">
