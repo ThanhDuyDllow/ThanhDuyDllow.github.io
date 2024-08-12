@@ -1,6 +1,6 @@
 body {
     margin: 0;
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Roboto', sans-serif;
 }
 
 header {
@@ -167,9 +167,13 @@ nav {
 }
 .menu-item h3 {
     margin: 10px 0 5px;
+    font-family: 'Roboto', sans-serif;
+    color: rgb(255, 72, 0); /* Màu chữ */
+    
 }
 .menu-item .price {
-    color: green;
+    color: rgb(0, 0, 0);
+
 }
 .menu-item .rating {
     color: gold;
@@ -197,11 +201,12 @@ nav {
 
 .menu-banner img {  
     width: 100%; /* Đặt chiều rộng cụ thể */
-
 }
+
+
 /* Đặt phông chữ  cho nút */
 .size-buttons button {
-    font-family: 'Press Start 2P', cursive;
+    font-family: 'Roboto', sans-serif;
     color: white; /* Màu chữ */
     background-color: #ff5100; /* Màu nền */
     border: none;
@@ -212,4 +217,29 @@ nav {
 }
 .size-buttons button:hover {
     background-color: #000000; /* Màu nền khi hover */
+}
+
+
+/* vote đánh giá */
+.star {
+    cursor: pointer;
+    font-size: 1.5em;
+    color: gray;
+}
+
+.star.selected,
+.star.hover {
+    color: gold;
+}
+
+.reaction {
+    font-size: 1.5em;
+    margin-left: 10px;
+    position: absolute;
+    display: none;
+}
+
+.rating {
+    position: relative;
+    display: inline-block;
 }
