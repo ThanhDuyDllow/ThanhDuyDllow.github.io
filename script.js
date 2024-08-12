@@ -4,6 +4,9 @@ let isDragging = false;
 
 showSlides(slideIndex);
 
+// Change slide every 5 seconds
+setInterval(nextSlide, 6000); 
+
 function showSlides(n) {
     let slides = document.getElementsByClassName("slide");
     let dots = document.getElementsByClassName("dot");
